@@ -2,23 +2,25 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import { signHref, type Sign } from "@/lib/signs";
 
 type Tab = "sentences" | "letters";
 
-export function CatalogTabs({ sentences, letters }: { sentences: Sign[]; letters: Sign[] }) {
-  const [tab, setTab] = useState<Tab>("sentences");
-  const hasLetters = letters.length > 0;
+// The hash is only known in the browser; the server renders the sentences tab.
+function subscribeToHash(onChange: () => void) {
+  window.addEventListener("hashchange", onChange);
+  return () => window.removeEventListener("hashchange", onChange);
+}
 
-  // The hash is only known in the browser, so read it after hydration.
-  useEffect(() => {
-    if (hasLetters && window.location.hash === "#letters") setTab("letters");
-  }, [hasLetters]);
+export function CatalogTabs({ sentences, letters }: { sentences: Sign[]; letters: Sign[] }) {
+  const hash = useSyncExternalStore(subscribeToHash, () => window.location.hash, () => "");
+  const hasLetters = letters.length > 0;
+  const tab: Tab = hasLetters && hash === "#letters" ? "letters" : "sentences";
 
   function select(next: Tab) {
-    setTab(next);
     history.replaceState(null, "", next === "letters" ? "#letters" : location.pathname);
+    window.dispatchEvent(new HashChangeEvent("hashchange"));
   }
 
   const tabClass = (active: boolean) =>
