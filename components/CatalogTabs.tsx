@@ -61,13 +61,13 @@ export function CatalogTabs({ sentences, letters }: { sentences: Sign[]; letters
                 href={signHref(sign)}
                 className="block rounded-2xl bg-white p-2 shadow-sm active:scale-[0.98]"
               >
-                <span className="relative block aspect-[880/1172] overflow-hidden rounded-xl">
+                <span className="relative block aspect-square overflow-hidden rounded-xl">
                   <Image
                     src={sign.steps[0].image}
                     alt=""
                     fill
                     sizes="(max-width: 448px) 50vw, 220px"
-                    className="object-cover"
+                    className="object-cover object-top"
                   />
                 </span>
                 <span className="mt-2 block px-1 pb-1 text-sm font-bold">{sign.title}</span>

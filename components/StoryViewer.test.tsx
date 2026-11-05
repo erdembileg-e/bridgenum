@@ -102,6 +102,16 @@ describe("StoryViewer", () => {
     expect(screen.getByText("Алхам хоёр", { selector: "p" })).toBeInTheDocument();
   });
 
+  it("preloads the next step at the size the stage shows", () => {
+    const { container } = renderViewer();
+    const shown = screen.getByRole("img", { name: "Алхам нэг" });
+    const preload = [...container.querySelectorAll("img")].find((img) =>
+      img.getAttribute("src")?.includes("step-2"),
+    );
+    expect(preload).toBeDefined();
+    expect(preload?.getAttribute("sizes")).toBe(shown.getAttribute("sizes"));
+  });
+
   it("links the close button to the catalog", () => {
     renderViewer();
     expect(screen.getByRole("link", { name: "Хаах" })).toHaveAttribute("href", "/learn");

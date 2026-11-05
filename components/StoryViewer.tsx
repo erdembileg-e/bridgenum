@@ -8,6 +8,7 @@ import type { Sign } from "@/lib/signs";
 import { move } from "@/lib/story";
 
 const SWIPE_MIN_PX = 50;
+const STAGE_SIZES = "(max-width: 448px) 100vw, 448px";
 
 type Props = {
   sign: Sign;
@@ -105,7 +106,7 @@ export function StoryViewer({ sign, position, count, nextHref, prevHref, closeHr
 
         <div
           data-testid="story-stage"
-          className="relative aspect-[880/1172] w-full touch-pan-y select-none overflow-hidden rounded-2xl"
+          className="relative aspect-square w-full touch-pan-y select-none overflow-hidden rounded-2xl bg-white/10"
           onPointerDown={onPointerDown}
           onPointerUp={onPointerUp}
         >
@@ -114,9 +115,9 @@ export function StoryViewer({ sign, position, count, nextHref, prevHref, closeHr
             src={step.image}
             alt={step.caption}
             fill
-            sizes="(max-width: 448px) 100vw, 448px"
+            sizes={STAGE_SIZES}
             priority={index === 0}
-            className="object-cover"
+            className="object-cover object-top"
             draggable={false}
           />
           <button
@@ -133,15 +134,10 @@ export function StoryViewer({ sign, position, count, nextHref, prevHref, closeHr
           />
         </div>
         {nextStep && (
-          <Image
-            src={nextStep.image}
-            alt=""
-            width={1}
-            height={1}
-            loading="eager"
-            className="hidden"
-            aria-hidden
-          />
+          // Same sizes as the stage so the browser fetches the variant it will show next.
+          <span className="relative hidden aspect-square w-full" aria-hidden>
+            <Image src={nextStep.image} alt="" fill sizes={STAGE_SIZES} loading="eager" />
+          </span>
         )}
 
         <p className="mt-3 rounded-xl bg-primary-light px-4 py-3 text-center font-semibold text-ink">
