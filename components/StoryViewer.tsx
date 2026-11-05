@@ -20,7 +20,14 @@ type Props = {
   closeHref: string;
 };
 
-export function StoryViewer({ sign, position, count, nextHref, prevHref, closeHref }: Props) {
+export function StoryViewer(props: Props) {
+  // Cache Components keeps visited routes' state; a fresh visit should start at step 1,
+  // while browser back/forward keeps the step the visitor left on.
+  const { bfcacheId } = useRouter();
+  return <StoryPlayer key={bfcacheId} {...props} />;
+}
+
+function StoryPlayer({ sign, position, count, nextHref, prevHref, closeHref }: Props) {
   const router = useRouter();
   const [index, setIndex] = useState(0);
   const [finished, setFinished] = useState(false);

@@ -15,6 +15,10 @@ export const metadata: Metadata = {
     template: "%s · Монгол дохионы хэл",
   },
   description: "Монгол дохионы хэлний өгүүлбэр, үсгийг зургаар сураарай.",
+  openGraph: {
+    locale: "mn_MN",
+    images: ["/signs/sain-baina-uu/steps.png"],
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

@@ -1,6 +1,5 @@
-import fs from "node:fs";
-import path from "node:path";
 import { describe, expect, it } from "vitest";
+import { publicFileExists } from "@/lib/files";
 import { letters } from "./letters";
 import { sentences } from "./sentences";
 
@@ -54,7 +53,7 @@ describe("content", () => {
       for (const image of images) {
         expect(image.startsWith("/signs/")).toBe(true);
         expect(image).not.toMatch(/mnsl/i);
-        expect(fs.existsSync(path.join("public", image)), image).toBe(true);
+        expect(publicFileExists(image), image).toBe(true);
       }
     }
   });

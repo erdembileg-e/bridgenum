@@ -4,7 +4,8 @@ import type { Sign } from "@/lib/signs";
 import { StoryViewer } from "./StoryViewer";
 
 const push = vi.fn();
-vi.mock("next/navigation", () => ({ useRouter: () => ({ push }) }));
+let bfcacheId = "visit-1";
+vi.mock("next/navigation", () => ({ useRouter: () => ({ push, bfcacheId }) }));
 
 const sign: Sign = {
   kind: "sentence",
@@ -35,7 +36,10 @@ function renderViewer(props: Partial<Parameters<typeof StoryViewer>[0]> = {}) {
 const right = () => fireEvent.keyDown(window, { key: "ArrowRight" });
 const left = () => fireEvent.keyDown(window, { key: "ArrowLeft" });
 
-beforeEach(() => push.mockReset());
+beforeEach(() => {
+  push.mockReset();
+  bfcacheId = "visit-1";
+});
 
 describe("StoryViewer", () => {
   it("shows the first step with its progress", () => {
@@ -110,6 +114,25 @@ describe("StoryViewer", () => {
     );
     expect(preload).toBeDefined();
     expect(preload?.getAttribute("sizes")).toBe(shown.getAttribute("sizes"));
+  });
+
+  it("starts again at step 1 when the sign is opened by a new navigation", () => {
+    const { rerender } = renderViewer();
+    right();
+    right();
+    expect(screen.getByText("Алхам гурав", { selector: "p" })).toBeInTheDocument();
+    bfcacheId = "visit-2";
+    rerender(
+      <StoryViewer
+        sign={sign}
+        position={1}
+        count={40}
+        nextHref="/sentence/next"
+        prevHref="/sentence/prev"
+        closeHref="/learn"
+      />,
+    );
+    expect(screen.getByText("Алхам нэг", { selector: "p" })).toBeInTheDocument();
   });
 
   it("links the close button to the catalog", () => {
