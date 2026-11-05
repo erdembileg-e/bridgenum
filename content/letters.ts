@@ -1,0 +1,48 @@
+import type { Sign } from "@/lib/signs";
+
+const alphabet: [title: string, slug: string][] = [
+  ["А", "a"],
+  ["Б", "b"],
+  ["В", "v"],
+  ["Г", "g"],
+  ["Д", "d"],
+  ["Е", "ye"],
+  ["Ё", "yo"],
+  ["Ж", "j"],
+  ["З", "z"],
+  ["И", "i"],
+  ["Й", "ii"],
+  ["К", "k"],
+  ["Л", "l"],
+  ["М", "m"],
+  ["Н", "n"],
+  ["О", "o"],
+  ["Ө", "oe"],
+  ["П", "p"],
+  ["Р", "r"],
+  ["С", "s"],
+  ["Т", "t"],
+  ["У", "u"],
+  ["Ү", "ue"],
+  ["Ф", "f"],
+  ["Х", "kh"],
+  ["Ц", "ts"],
+  ["Ч", "ch"],
+  ["Ш", "sh"],
+  ["Щ", "shch"],
+  ["Ъ", "hard-sign"],
+  ["Ы", "y"],
+  ["Ь", "soft-sign"],
+  ["Э", "e"],
+  ["Ю", "yu"],
+  ["Я", "ya"],
+];
+
+// Slugs are permanent once shared. Add steps to a letter to publish it.
+export const letters: Sign[] = alphabet.map(([title, slug], i) => ({
+  kind: "letter",
+  order: i + 1,
+  slug,
+  title,
+  steps: [],
+}));
