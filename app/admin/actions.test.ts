@@ -1,6 +1,12 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { ADMIN_COOKIE, signSession } from "@/lib/comments/admin-auth";
-import { approveComment, deleteComment, login, logout, unpublishComment } from "./actions";
+import { ADMIN_COOKIE, LOGIN_FAIL_DELAY_MS, signSession } from "@/lib/comments/admin-auth";
+import {
+  approveComment,
+  deleteComment,
+  login,
+  logout,
+  unpublishComment,
+} from "./actions";
 
 const store = { approve: vi.fn(), unpublish: vi.fn(), remove: vi.fn() };
 const jar = new Map<string, string>();
@@ -17,10 +23,13 @@ vi.mock("next/headers", () => ({
   }),
 }));
 
+const PASSWORD = "correct-horse-battery";
+
 beforeEach(() => {
+  vi.useRealTimers();
   jar.clear();
   vi.clearAllMocks();
-  process.env.ADMIN_PASSWORD = "pw";
+  process.env.ADMIN_PASSWORD = PASSWORD;
 });
 
 const form = (password: string) => {
@@ -53,16 +62,40 @@ describe("admin actions", () => {
   });
 
   it("logs in with the right password and sets a locked-down cookie", async () => {
-    expect(await login({ error: false }, form("pw"))).toEqual({ error: false });
+    expect(await login({ error: false }, form(PASSWORD))).toEqual({ error: false });
     const [name, , options] = setCookie.mock.calls[0] as unknown as [string, string, object];
     expect(name).toBe(ADMIN_COOKIE);
     expect(options).toMatchObject({ httpOnly: true, sameSite: "lax", path: "/admin" });
   });
 
+  async function failedLogin(password: string) {
+    vi.useFakeTimers();
+    const result = login({ error: false }, form(password));
+    await vi.advanceTimersByTimeAsync(LOGIN_FAIL_DELAY_MS);
+    return result;
+  }
+
   it("rejects a wrong password, and any password when none is set", async () => {
-    expect(await login({ error: false }, form("nope"))).toEqual({ error: true });
+    expect(await failedLogin("nope")).toEqual({ error: true });
     delete process.env.ADMIN_PASSWORD;
-    expect(await login({ error: false }, form(""))).toEqual({ error: true });
+    expect(await failedLogin("")).toEqual({ error: true });
+    expect(setCookie).not.toHaveBeenCalled();
+  });
+
+  it("slows down wrong guesses", async () => {
+    vi.useFakeTimers();
+    let settled = false;
+    void login({ error: false }, form("nope")).then(() => (settled = true));
+    await vi.advanceTimersByTimeAsync(LOGIN_FAIL_DELAY_MS - 10);
+    expect(settled).toBe(false);
+    await vi.advanceTimersByTimeAsync(10);
+    expect(settled).toBe(true);
+    expect(LOGIN_FAIL_DELAY_MS).toBeGreaterThanOrEqual(1000);
+  });
+
+  it("refuses to work with a short admin password", async () => {
+    process.env.ADMIN_PASSWORD = "short-pass1";
+    expect(await failedLogin("short-pass1")).toEqual({ error: true });
     expect(setCookie).not.toHaveBeenCalled();
   });
 

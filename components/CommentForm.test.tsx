@@ -60,4 +60,26 @@ describe("CommentForm", () => {
     fill();
     expect(await screen.findByText("Сэтгэгдэл хэт богино байна.")).toBeInTheDocument();
   });
+
+  it("keeps what the visitor typed when sending fails", async () => {
+    submitComment.mockResolvedValue({
+      status: "error",
+      message: "Түр хүлээгээд дахин оролдоорой.",
+      values: { name: "Бат", body: "Сайхан сайт" },
+    });
+    render(<CommentForm />);
+    fireEvent.change(screen.getByLabelText("Нэр (заавал биш)"), { target: { value: "Бат" } });
+    fill();
+    await screen.findByText("Түр хүлээгээд дахин оролдоорой.");
+    expect(screen.getByLabelText("Сэтгэгдэл")).toHaveValue("Сайхан сайт");
+    expect(screen.getByLabelText("Нэр (заавал биш)")).toHaveValue("Бат");
+  });
+
+  it("clears the form once sent", async () => {
+    submitComment.mockResolvedValue({ status: "sent" });
+    render(<CommentForm />);
+    fill();
+    await screen.findByText("Баярлалаа! Таны сэтгэгдлийг удахгүй нийтэлнэ.");
+    expect(screen.getByLabelText("Сэтгэгдэл")).toHaveValue("");
+  });
 });

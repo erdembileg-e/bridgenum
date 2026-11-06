@@ -27,7 +27,7 @@ npm run build
    ([.env.example](.env.example)-г үзнэ үү):
    - `SUPABASE_URL` — Project URL
    - `SUPABASE_SERVICE_ROLE_KEY` — service_role түлхүүр
-   - `ADMIN_PASSWORD` — `/admin`-д нэвтрэх нууц үг
+   - `ADMIN_PASSWORD` — `/admin`-д нэвтрэх нууц үг, **дор хаяж 12 тэмдэгт** (урт, санамсаргүй байх тусам сайн)
    - `COMMENTS_SECRET` — 32+ санамсаргүй тэмдэгт (`openssl rand -hex 32`)
 5. Дахин deploy хийнэ.
 6. `сайт/admin` руу орж нууц үгээ оруулаад сэтгэгдлийг **Зөвшөөрөх**, **Нуух** эсвэл **Устгах**.

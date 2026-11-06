@@ -9,6 +9,8 @@ const field =
 
 export function CommentForm() {
   const [state, action, pending] = useActionState(submitComment, initialSubmitState);
+  // React resets the form after every action; on error the reset lands on what was typed.
+  const kept = state.status === "error" ? state.values : undefined;
 
   return (
     <form
@@ -19,7 +21,13 @@ export function CommentForm() {
       <div className="grid gap-3 sm:grid-cols-[1fr_2fr_auto] sm:items-start">
         <label className="block">
           <span className="sr-only">Нэр (заавал биш)</span>
-          <input name="name" maxLength={40} placeholder="Нэр (заавал биш)" className={field} />
+          <input
+            name="name"
+            maxLength={40}
+            defaultValue={kept?.name ?? ""}
+            placeholder="Нэр (заавал биш)"
+            className={field}
+          />
         </label>
         <label className="block">
           <span className="sr-only">Сэтгэгдэл</span>
@@ -29,6 +37,7 @@ export function CommentForm() {
             minLength={3}
             maxLength={500}
             rows={2}
+            defaultValue={kept?.body ?? ""}
             placeholder="Сэтгэгдлээ бичээрэй…"
             className={`${field} resize-y`}
           />

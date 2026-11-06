@@ -45,12 +45,13 @@ describe("submitComment", () => {
     expect(await submitComment(idle, form({ body: "a" }))).toEqual({
       status: "error",
       message: "Сэтгэгдэл хэт богино байна.",
+      values: { name: "", body: "a" },
     });
-    expect(await submitComment(idle, form({ body: "a".repeat(501) }))).toEqual({
+    expect(await submitComment(idle, form({ body: "a".repeat(501) }))).toMatchObject({
       status: "error",
       message: "Сэтгэгдэл 500 тэмдэгтээс хэтрэхгүй.",
     });
-    expect(await submitComment(idle, form({ body: "Сайхан", name: "н".repeat(41) }))).toEqual({
+    expect(await submitComment(idle, form({ body: "Сайхан", name: "н".repeat(41) }))).toMatchObject({
       status: "error",
       message: "Нэр 40 тэмдэгтээс хэтрэхгүй.",
     });
@@ -58,9 +59,10 @@ describe("submitComment", () => {
 
   it("asks to wait after 3 comments in 10 minutes", async () => {
     store.countRecent.mockResolvedValue(3);
-    expect(await submitComment(idle, form({ body: "Сайхан" }))).toEqual({
+    expect(await submitComment(idle, form({ body: "Сайхан", name: "Бат" }))).toEqual({
       status: "error",
       message: "Түр хүлээгээд дахин оролдоорой.",
+      values: { name: "Бат", body: "Сайхан" },
     });
     expect(store.insert).not.toHaveBeenCalled();
     const since = new Date(store.countRecent.mock.calls[0][1]).getTime();
@@ -88,6 +90,7 @@ describe("submitComment", () => {
     expect(await submitComment(idle, form({ body: "Сайхан" }))).toEqual({
       status: "error",
       message: "Илгээж чадсангүй. Дахин оролдоорой.",
+      values: { name: "", body: "Сайхан" },
     });
   });
 });

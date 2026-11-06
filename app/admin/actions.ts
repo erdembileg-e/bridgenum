@@ -2,20 +2,31 @@
 
 import { updateTag } from "next/cache";
 import { cookies } from "next/headers";
-import { ADMIN_COOKIE, checkPassword, SESSION_MS, signSession } from "@/lib/comments/admin-auth";
+import {
+  ADMIN_COOKIE,
+  adminPasswordReady,
+  checkPassword,
+  LOGIN_FAIL_DELAY_MS,
+  SESSION_MS,
+  signSession,
+} from "@/lib/comments/admin-auth";
 import { isAdmin, type LoginState } from "@/lib/comments/admin-session";
 import { COMMENTS_TAG } from "@/lib/comments/tags";
 import { commentsSecret, getStore } from "@/lib/comments/server";
 
 export async function login(_prev: LoginState, form: FormData): Promise<LoginState> {
   const password = form.get("password");
+  const expected = process.env.ADMIN_PASSWORD;
   const secret = commentsSecret();
   if (
     !secret ||
+    !adminPasswordReady(expected) ||
     typeof password !== "string" ||
-    !checkPassword(password, process.env.ADMIN_PASSWORD ?? "")
-  )
+    !checkPassword(password, expected)
+  ) {
+    await new Promise((resolve) => setTimeout(resolve, LOGIN_FAIL_DELAY_MS));
     return { error: true };
+  }
   (await cookies()).set(ADMIN_COOKIE, signSession(Date.now(), secret), {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",

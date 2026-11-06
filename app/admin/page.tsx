@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
+import { adminPasswordReady } from "@/lib/comments/admin-auth";
 import { isAdmin } from "@/lib/comments/admin-session";
 import { displayName, type Comment } from "@/lib/comments/rules";
 import { commentsConfigured, getStore } from "@/lib/comments/server";
@@ -65,8 +66,10 @@ function Section({ title, comments, approved }: { title: string; comments: Comme
 async function AdminPanel() {
   // Read the session first so this panel is always rendered per request, never prerendered.
   const admin = await isAdmin();
-  if (!commentsConfigured() || !process.env.ADMIN_PASSWORD)
+  if (!commentsConfigured())
     return <p className="mt-8">Supabase тохируулаагүй байна. README-г үзнэ үү.</p>;
+  if (!adminPasswordReady(process.env.ADMIN_PASSWORD))
+    return <p className="mt-8">ADMIN_PASSWORD дор хаяж 12 тэмдэгт байх ёстой. README-г үзнэ үү.</p>;
   if (!admin) return <AdminLogin />;
 
   const store = getStore()!;

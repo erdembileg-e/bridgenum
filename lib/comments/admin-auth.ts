@@ -2,6 +2,14 @@ import { createHmac, timingSafeEqual } from "node:crypto";
 
 export const ADMIN_COOKIE = "msl_admin";
 export const SESSION_MS = 7 * 24 * 60 * 60 * 1000;
+/** A long password is what keeps guessing impractical; shorter ones disable the admin page. */
+export const ADMIN_PASSWORD_MIN = 12;
+/** Each wrong guess costs a second, so guessing a 12+ character password is impractical. */
+export const LOGIN_FAIL_DELAY_MS = 1000;
+
+export function adminPasswordReady(password: string | undefined): password is string {
+  return typeof password === "string" && password.length >= ADMIN_PASSWORD_MIN;
+}
 
 function sign(issuedMs: number, secret: string): string {
   return createHmac("sha256", secret).update(`admin:${issuedMs}`).digest("hex");
