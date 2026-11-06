@@ -6,7 +6,7 @@ export function StepStrip({ steps }: { steps: Step[] }) {
     <ol className="-mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-2">
       {steps.map((step, i) => (
         <li key={step.image} className="w-[70%] shrink-0 snap-center sm:w-[31%]">
-          <span className="relative block aspect-square overflow-hidden rounded-2xl">
+          <span className="relative block aspect-square overflow-hidden rounded-3xl border-4 border-white bg-primary-light shadow-[0_8px_22px_rgba(123,79,214,0.14)]">
             <Image
               src={step.image}
               alt={step.caption}
@@ -16,7 +16,7 @@ export function StepStrip({ steps }: { steps: Step[] }) {
               className="object-cover object-top"
             />
           </span>
-          <p className="mt-2 rounded-xl bg-primary-light px-3 py-2 text-center text-sm font-semibold">
+          <p className="mt-2 rounded-2xl bg-white px-3 py-2 text-center text-sm font-semibold shadow-[0_2px_8px_rgba(123,79,214,0.08)]">
             {step.caption}
           </p>
         </li>

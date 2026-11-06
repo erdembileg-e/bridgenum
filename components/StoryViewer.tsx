@@ -97,7 +97,7 @@ function StoryPlayer({ sign, position, count, nextHref, prevHref, closeHref }: P
               key={s.image}
               data-testid="progress-bar"
               aria-current={i === index ? "step" : undefined}
-              className={`h-1 flex-1 rounded-full ${i <= index ? "bg-white" : "bg-white/25"}`}
+              className={`h-1 flex-1 rounded-full ${i <= index ? "bg-sun" : "bg-white/25"}`}
             />
           ))}
         </div>
@@ -109,11 +109,11 @@ function StoryPlayer({ sign, position, count, nextHref, prevHref, closeHref }: P
             ✕
           </Link>
         </div>
-        <h1 className="mb-3 mt-1 text-2xl font-bold">{sign.title}</h1>
+        <h1 className="mb-3 mt-1 text-2xl font-extrabold">{sign.title}</h1>
 
         <div
           data-testid="story-stage"
-          className="relative aspect-square w-full touch-pan-y select-none overflow-hidden rounded-2xl bg-white/10"
+          className="relative aspect-square w-full touch-pan-y select-none overflow-hidden rounded-3xl bg-white/10 shadow-[0_12px_40px_rgba(0,0,0,0.35)]"
           onPointerDown={onPointerDown}
           onPointerUp={onPointerUp}
         >
@@ -147,14 +147,15 @@ function StoryPlayer({ sign, position, count, nextHref, prevHref, closeHref }: P
           </span>
         )}
 
-        <p className="mt-3 rounded-xl bg-primary-light px-4 py-3 text-center font-semibold text-ink">
+        <p className="mt-3 rounded-2xl bg-primary-light px-4 py-3 text-center font-semibold text-ink">
           {step.caption}
         </p>
+        <p className="mt-2 text-center text-xs text-white/50">Эх сурвалж: mnsl.mn</p>
 
         {finished && (
           <Link
             href={closeHref}
-            className="mt-4 rounded-xl bg-primary px-4 py-3 text-center font-bold text-white"
+            className="mt-4 rounded-full bg-accent px-4 py-3 text-center font-bold text-white"
           >
             Бүх дохиог үзэх
           </Link>
