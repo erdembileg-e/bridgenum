@@ -38,4 +38,23 @@ describe("landing page", () => {
       SOURCE,
     );
   });
+
+  it("previews six sentences and links to all of them", () => {
+    render(<Home />);
+    const cards = screen
+      .getAllByRole("link")
+      .filter((a) => a.getAttribute("href")?.startsWith("/sentence/"));
+    expect(cards).toHaveLength(6);
+    expect(screen.getByRole("link", { name: "Бүгдийг үзэх (40) →" })).toHaveAttribute(
+      "href",
+      "/learn",
+    );
+  });
+
+  it("has a comments section the header can jump to", () => {
+    const { container } = render(<Home />);
+    const section = container.querySelector("#comments");
+    expect(section).not.toBeNull();
+    expect(section).toHaveTextContent("Хүмүүс юу гэж хэлж байна");
+  });
 });

@@ -15,9 +15,10 @@
   background: linear-gradient(180deg, #efe5ff 0, #f6f1ff 40%, #fffaf0 100%);
 }
 
+/* One gradient down the top of the page, fading into cream; it must not tile per screen. */
 body {
   min-height: 100dvh;
-  background: linear-gradient(180deg, #efe5ff 0, #f6f1ff 40rem, #fffaf0 100%);
-  background-color: var(--color-page);
+  background: linear-gradient(180deg, #efe5ff 0, #f6f1ff 28rem, #fffaf0 70rem) no-repeat;
+  background-color: #fffaf0;
   color: var(--color-ink);
 }
