@@ -1,8 +1,8 @@
 import { cacheLife, cacheTag } from "next/cache";
 import type { Comment } from "./rules";
 import { getStore } from "./server";
+import { COMMENTS_TAG } from "./tags";
 
-export const COMMENTS_TAG = "comments";
 export const PUBLIC_COMMENT_LIMIT = 12;
 
 /** Approved comments for the home page. Admin actions expire the `comments` tag. */
