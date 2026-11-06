@@ -1,6 +1,7 @@
 import { describe, expect, it, vi } from "vitest";
 
 vi.mock("next/font/google", () => ({ Nunito: () => ({ variable: "font" }) }));
+vi.mock("next/font/local", () => ({ default: () => ({ variable: "gip" }) }));
 
 describe("root metadata", () => {
   it("gives shared links to / and /learn a default image", async () => {
