@@ -1,4 +1,7 @@
 import Link from "next/link";
+import { Suspense } from "react";
+import { CommentForm } from "@/components/CommentForm";
+import { CommentsFeed } from "@/components/CommentsFeed";
 import { PhotoStack } from "@/components/PhotoStack";
 import { SignCard } from "@/components/SignCard";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -78,7 +81,11 @@ export default function Home() {
         </section>
 
         <section id="comments" className="mt-14 scroll-mt-6">
-          <h2 className="text-2xl font-extrabold sm:text-3xl">💬 Хүмүүс юу гэж хэлж байна</h2>
+          <h2 className="mb-4 text-2xl font-extrabold sm:text-3xl">💬 Хүмүүс юу гэж хэлж байна</h2>
+          <Suspense fallback={<div className="h-24 animate-pulse rounded-[20px] bg-white/60" />}>
+            <CommentsFeed />
+          </Suspense>
+          <CommentForm />
         </section>
 
         <a
