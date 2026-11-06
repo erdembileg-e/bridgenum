@@ -12,7 +12,9 @@ vi.mock("next/navigation", () => ({
 
 describe("sign pages", () => {
   it("prerenders published sentences", () => {
-    expect(signStaticParams("sentence")).toEqual([{ slug: "sain-baina-uu" }]);
+    const params = signStaticParams("sentence");
+    expect(params).toHaveLength(40);
+    expect(params[0]).toEqual({ slug: "sain-baina-uu" });
   });
 
   it("falls back to one letter slug while no letter is published", () => {
@@ -30,20 +32,17 @@ describe("sign pages", () => {
   });
 
   it("has no metadata for unpublished signs", () => {
-    expect(signMetadata("sentence", "saikhan-amarsan-uu")).toEqual({});
+    expect(signMetadata("letter", "a")).toEqual({});
   });
 
   it("is not found for unpublished or unknown signs", () => {
-    expect(() => SignPage({ kind: "sentence", slug: "saikhan-amarsan-uu" })).toThrow(
-      "NEXT_NOT_FOUND",
-    );
     expect(() => SignPage({ kind: "letter", slug: "a" })).toThrow("NEXT_NOT_FOUND");
     expect(() => SignPage({ kind: "sentence", slug: "xyz" })).toThrow("NEXT_NOT_FOUND");
   });
 
   it("renders the viewer with its position and close link", () => {
     render(SignPage({ kind: "sentence", slug: "sain-baina-uu" }));
-    expect(screen.getByText("1 / 1")).toBeInTheDocument();
+    expect(screen.getByText("1 / 40")).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Хаах" })).toHaveAttribute("href", "/learn");
   });
 });

@@ -7,7 +7,7 @@ describe("sitemap", () => {
     expect(urls).toContain("http://localhost:3000/");
     expect(urls).toContain("http://localhost:3000/learn");
     expect(urls).toContain("http://localhost:3000/sentence/sain-baina-uu");
-    expect(urls.some((u) => u.includes("saikhan-amarsan-uu"))).toBe(false);
+    expect(urls).toContain("http://localhost:3000/sentence/bi-chamd-tusalya");
     expect(urls.some((u) => u.includes("/letter/"))).toBe(false);
   });
 });
