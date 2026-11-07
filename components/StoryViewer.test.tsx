@@ -164,4 +164,9 @@ describe("StoryViewer", () => {
     renderViewer({ prevHref: null });
     expect(screen.getByRole("button", { name: "Өмнөх алхам" })).toBeDisabled();
   });
+
+  it("shows no source credit line", () => {
+    renderViewer();
+    expect(screen.queryByText(/mnsl\.mn/)).not.toBeInTheDocument();
+  });
 });

@@ -173,7 +173,6 @@ function StoryPlayer({ sign, position, count, nextHref, prevHref, closeHref }: P
             <span aria-hidden> →</span>
           </button>
         </div>
-        <p className="mt-3 text-center text-xs text-white/50">Эх сурвалж: mnsl.mn</p>
 
         {finished && (
           <Link

@@ -75,5 +75,5 @@ Approved mockup: `.superpowers/brainstorm/53611-1793980056/content/visual-style.
 - Dependency: `@supabase/supabase-js` (or plain `fetch` to the Supabase REST API, if that is lighter).
 - «Сурч эхлэх →» opens `/learn`. The home card grid is a short preview (6 sentences) with a «Бүгдийг үзэх (40) →» link to `/learn`, not all 40, to keep the phone load light. Letters are not on home.
 - `/admin` also lists approved comments with **Unpublish/Delete**, so a mistaken approval can be undone. Delete refreshes the public list too.
-- Image credit: card and hero crops cut off the baked-in «Эх сурвалж: mnsl.mn» label, so a site-wide footer line «Зургийн эх сурвалж: mnsl.mn» (linked) appears on every page with the header, and the step viewer shows a small credit as well.
+- Image credit: removed by the owner on 2026-11-07. There is no footer credit and no credit line in the step viewer. The step images are being redrawn with one model presenter, without the baked-in «Эх сурвалж: mnsl.mn» label.
 - One shared header on home, `/learn` and the not-found page. «Сэтгэгдэл» links to `/#comments`. The step viewer keeps no site header.

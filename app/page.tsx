@@ -4,7 +4,6 @@ import { CommentForm } from "@/components/CommentForm";
 import { CommentsFeed } from "@/components/CommentsFeed";
 import { PhotoStack } from "@/components/PhotoStack";
 import { SignCard } from "@/components/SignCard";
-import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { StepStrip } from "@/components/StepStrip";
 import { getPublished, getSign } from "@/lib/signs";
@@ -97,7 +96,6 @@ export default function Home() {
           Эх сурвалж: SDGBE төсөл, 2023
         </a>
       </main>
-      <SiteFooter />
     </>
   );
 }

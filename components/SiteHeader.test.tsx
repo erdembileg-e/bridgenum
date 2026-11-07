@@ -1,6 +1,5 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
 
 describe("SiteHeader", () => {
@@ -13,15 +12,5 @@ describe("SiteHeader", () => {
       "/learn#letters",
     );
     expect(screen.getByRole("link", { name: "Сэтгэгдэл" })).toHaveAttribute("href", "/#comments");
-  });
-});
-
-describe("SiteFooter", () => {
-  it("credits mnsl.mn for the images", () => {
-    render(<SiteFooter />);
-    expect(screen.getByRole("link", { name: "Зургийн эх сурвалж: mnsl.mn" })).toHaveAttribute(
-      "href",
-      "https://mnsl.mn",
-    );
   });
 });

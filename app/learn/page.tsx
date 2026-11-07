@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { CatalogTabs } from "@/components/CatalogTabs";
-import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { getPublished } from "@/lib/signs";
 
@@ -17,7 +16,6 @@ export default function LearnPage() {
         <h1 className="mb-4 text-3xl font-extrabold sm:text-4xl">Бүх дохио</h1>
         <CatalogTabs sentences={getPublished("sentence")} letters={getPublished("letter")} />
       </main>
-      <SiteFooter />
     </>
   );
 }

@@ -61,4 +61,9 @@ describe("landing page", () => {
     expect(section).not.toBeNull();
     expect(section).toHaveTextContent("Хүмүүс юу гэж хэлж байна");
   });
+
+  it("shows no mnsl.mn credit", () => {
+    render(<Home />);
+    expect(screen.queryByText(/mnsl\.mn/)).not.toBeInTheDocument();
+  });
 });

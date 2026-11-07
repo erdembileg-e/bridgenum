@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 
 export default function NotFound() {
@@ -18,7 +17,6 @@ export default function NotFound() {
           Бүх дохиог үзэх
         </Link>
       </main>
-      <SiteFooter />
     </>
   );
 }
