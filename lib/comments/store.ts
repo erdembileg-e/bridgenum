@@ -30,7 +30,9 @@ export function createStore(cfg: { url: string; key: string; fetch?: Fetcher }) 
   async function request(query: string, init: RequestInit = {}): Promise<Response> {
     const headers = new Headers(init.headers);
     headers.set("apikey", cfg.key);
-    headers.set("authorization", `Bearer ${cfg.key}`);
+    // Legacy service_role keys are JWTs and go in both headers. New sb_secret_ keys are not JWTs,
+    // so Supabase wants them only in `apikey`.
+    if (!cfg.key.startsWith("sb_")) headers.set("authorization", `Bearer ${cfg.key}`);
     if (init.body) headers.set("content-type", "application/json");
     const res = await doFetch(query ? `${base}?${query}` : base, {
       ...init,

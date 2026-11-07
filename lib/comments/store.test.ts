@@ -34,6 +34,14 @@ describe("comment store", () => {
     expect(JSON.parse(init.body as string)).toEqual({ name: null, body: "Сайхан", ip_hash: "h" });
   });
 
+  it("sends a new sb_secret_ key only as apikey, not as a Bearer token", async () => {
+    const f = fakeFetch({ json: [] });
+    await createStore({ url: URL_, key: "sb_secret_abc", fetch: f }).listPending();
+    const { headers } = call(f);
+    expect(headers.get("apikey")).toBe("sb_secret_abc");
+    expect(headers.get("authorization")).toBeNull();
+  });
+
   it("lists approved comments newest first and maps the columns", async () => {
     const f = fakeFetch({
       json: [

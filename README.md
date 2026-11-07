@@ -21,12 +21,12 @@ npm run build
 1. [supabase.com](https://supabase.com) дээр шинэ төсөл үүсгэнэ.
 2. **SQL Editor** нээгээд [supabase/migrations/0001_comments.sql](supabase/migrations/0001_comments.sql)-ийн
    агуулгыг хуулж ажиллуулна.
-3. **Project Settings → API** хэсгээс **Project URL** ба **service_role** түлхүүрийг хуулна.
-   service_role түлхүүрийг хэнд ч битгий өгөөрэй.
+3. **Project Settings → API Keys → Secret keys** хэсгээс `sb_secret_…` түлхүүрийг хуулна. Project URL нь `https://<project-id>.supabase.co`.
+   Энэ нууц түлхүүрийг хэнд ч битгий өгөөрэй.
 4. Vercel → төсөл → **Settings → Environment Variables** дээр дараах 4-ийг нэмнэ
    ([.env.example](.env.example)-г үзнэ үү):
    - `SUPABASE_URL` — Project URL
-   - `SUPABASE_SERVICE_ROLE_KEY` — service_role түлхүүр
+   - `SUPABASE_SERVICE_ROLE_KEY` — `sb_secret_…` нууц түлхүүр
    - `ADMIN_PASSWORD` — `/admin`-д нэвтрэх нууц үг, **дор хаяж 12 тэмдэгт** (урт, санамсаргүй байх тусам сайн)
    - `COMMENTS_SECRET` — 32+ санамсаргүй тэмдэгт (`openssl rand -hex 32`)
 5. Дахин deploy хийнэ.
