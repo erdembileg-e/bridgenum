@@ -150,7 +150,30 @@ function StoryPlayer({ sign, position, count, nextHref, prevHref, closeHref }: P
         <p className="mt-3 rounded-2xl bg-primary-light px-4 py-3 text-center font-semibold text-ink">
           {step.caption}
         </p>
-        <p className="mt-2 text-center text-xs text-white/50">Эх сурвалж: mnsl.mn</p>
+        <p className="mt-4 text-center text-sm font-semibold text-white/70">
+          Алхам {index + 1} / {steps.length}
+        </p>
+        <div className="mt-2 flex items-center gap-3">
+          <button
+            type="button"
+            onClick={() => go(-1)}
+            disabled={index === 0 && prevHref === null}
+            className="flex-1 whitespace-nowrap rounded-full bg-white/10 px-3 py-3 text-sm font-bold sm:text-base text-white transition hover:bg-white/20 disabled:opacity-30"
+          >
+            <span aria-hidden>← </span>
+            {index === 0 && prevHref ? "Өмнөх өгүүлбэр" : "Өмнөх алхам"}
+          </button>
+          <button
+            type="button"
+            onClick={() => go(1)}
+            disabled={finished}
+            className="flex-1 whitespace-nowrap rounded-full bg-sun px-3 py-3 text-sm font-bold sm:text-base text-ink shadow-[0_8px_20px_rgba(255,201,60,0.25)] transition hover:brightness-105 disabled:opacity-30"
+          >
+            {nextStep ? "Дараах алхам" : nextHref ? "Дараагийн өгүүлбэр" : "Дуусгах"}
+            <span aria-hidden> →</span>
+          </button>
+        </div>
+        <p className="mt-3 text-center text-xs text-white/50">Эх сурвалж: mnsl.mn</p>
 
         {finished && (
           <Link
