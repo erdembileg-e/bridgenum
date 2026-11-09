@@ -30,6 +30,11 @@ export function getPublished(kind: SignKind): Sign[] {
     .sort((a, b) => a.order - b.order);
 }
 
+/** Every sign of a kind in order, including ones still waiting for images. */
+export function getAll(kind: SignKind): Sign[] {
+  return [...all(kind)].sort((a, b) => a.order - b.order);
+}
+
 export function getSign(kind: SignKind, slug: string): Sign | null {
   return getPublished(kind).find((sign) => sign.slug === slug) ?? null;
 }

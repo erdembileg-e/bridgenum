@@ -1,0 +1,264 @@
+- generic [active] [ref=f3e1]:
+  - banner [ref=f3e2]:
+    - link "Дохионы хэл" [ref=f3e3] [cursor=pointer]:
+      - /url: /
+    - navigation "Үндсэн цэс" [ref=f3e4]:
+      - list [ref=f3e5]:
+        - listitem [ref=f3e6]:
+          - link "Өгүүлбэр" [ref=f3e7] [cursor=pointer]:
+            - /url: /learn
+        - listitem [ref=f3e8]:
+          - link "Цагаан толгой" [ref=f3e9] [cursor=pointer]:
+            - /url: /learn#letters
+        - listitem [ref=f3e10]:
+          - link "Сэтгэгдэл" [ref=f3e11] [cursor=pointer]:
+            - /url: /#comments
+  - main [ref=f3e12]:
+    - heading "Бүх дохио" [level=1] [ref=f3e13]
+    - generic [ref=f3e14]:
+      - tablist [ref=f3e15]:
+        - tab "Өгүүлбэр 40" [selected] [ref=f3e16] [cursor=pointer]
+        - tab "Үсэг 35" [ref=f3e17] [cursor=pointer]
+      - tabpanel [ref=f3e18]:
+        - listitem [ref=f3e19]:
+          - link "Сайн байна уу? 3 алхам" [ref=f3e20] [cursor=pointer]:
+            - /url: /sentence/sain-baina-uu
+            - generic [ref=f3e22]:
+              - generic [ref=f3e23]: Сайн байна уу?
+              - generic [ref=f3e24]: 3 алхам
+        - listitem [ref=f3e25]:
+          - link "Сайхан амарсан уу? 3 алхам" [ref=f3e26] [cursor=pointer]:
+            - /url: /sentence/saikhan-amarsan-uu
+            - generic [ref=f3e28]:
+              - generic [ref=f3e29]: Сайхан амарсан уу?
+              - generic [ref=f3e30]: 3 алхам
+        - listitem [ref=f3e31]:
+          - link "Өдрийг сайхан өнгөрүүлээрэй. 7 алхам" [ref=f3e32] [cursor=pointer]:
+            - /url: /sentence/udriig-saikhan-unguruuleerei
+            - generic [ref=f3e34]:
+              - generic [ref=f3e35]: Өдрийг сайхан өнгөрүүлээрэй.
+              - generic [ref=f3e36]: 7 алхам
+        - listitem [ref=f3e37]:
+          - link "Өглөөний мэнд. 4 алхам" [ref=f3e38] [cursor=pointer]:
+            - /url: /sentence/ugluunii-mend
+            - generic [ref=f3e40]:
+              - generic [ref=f3e41]: Өглөөний мэнд.
+              - generic [ref=f3e42]: 4 алхам
+        - listitem [ref=f3e43]:
+          - link "Өдрийн мэнд. 3 алхам" [ref=f3e44] [cursor=pointer]:
+            - /url: /sentence/udriin-mend
+            - generic [ref=f3e46]:
+              - generic [ref=f3e47]: Өдрийн мэнд.
+              - generic [ref=f3e48]: 3 алхам
+        - listitem [ref=f3e49]:
+          - link "Оройн мэнд. 4 алхам" [ref=f3e50] [cursor=pointer]:
+            - /url: /sentence/oroin-mend
+            - generic [ref=f3e52]:
+              - generic [ref=f3e53]: Оройн мэнд.
+              - generic [ref=f3e54]: 4 алхам
+        - listitem [ref=f3e55]:
+          - link "Баяртай. 1 алхам" [ref=f3e56] [cursor=pointer]:
+            - /url: /sentence/bayartai
+            - generic [ref=f3e58]:
+              - generic [ref=f3e59]: Баяртай.
+              - generic [ref=f3e60]: 1 алхам
+        - listitem [ref=f3e61]:
+          - link "Баярлалаа. 2 алхам" [ref=f3e62] [cursor=pointer]:
+            - /url: /sentence/bayarlalaa
+            - generic [ref=f3e64]:
+              - generic [ref=f3e65]: Баярлалаа.
+              - generic [ref=f3e66]: 2 алхам
+        - listitem [ref=f3e67]:
+          - link "Намайг _ гэдэг. 3 алхам" [ref=f3e68] [cursor=pointer]:
+            - /url: /sentence/namaig-gedeg
+            - generic [ref=f3e70]:
+              - generic [ref=f3e71]: Намайг _ гэдэг.
+              - generic [ref=f3e72]: 3 алхам
+        - listitem [ref=f3e73]:
+          - link "Танилцсандаа таатай байна. 3 алхам" [ref=f3e74] [cursor=pointer]:
+            - /url: /sentence/taniltssandaa-taatai-baina
+            - generic [ref=f3e76]:
+              - generic [ref=f3e77]: Танилцсандаа таатай байна.
+              - generic [ref=f3e78]: 3 алхам
+        - listitem [ref=f3e79]:
+          - link "Чамаар бахархаж байна. 2 алхам" [ref=f3e80] [cursor=pointer]:
+            - /url: /sentence/chamaar-bakharkhaj-baina
+            - generic [ref=f3e82]:
+              - generic [ref=f3e83]: Чамаар бахархаж байна.
+              - generic [ref=f3e84]: 2 алхам
+        - listitem [ref=f3e85]:
+          - link "Дараа уулзъя. 2 алхам" [ref=f3e86] [cursor=pointer]:
+            - /url: /sentence/daraa-uulzya
+            - generic [ref=f3e88]:
+              - generic [ref=f3e89]: Дараа уулзъя.
+              - generic [ref=f3e90]: 2 алхам
+        - listitem [ref=f3e91]:
+          - link "Би баяртай байна. 2 алхам" [ref=f3e92] [cursor=pointer]:
+            - /url: /sentence/bi-bayartai-baina
+            - generic [ref=f3e94]:
+              - generic [ref=f3e95]: Би баяртай байна.
+              - generic [ref=f3e96]: 2 алхам
+        - listitem [ref=f3e97]:
+          - link "Би чамд хайртай. 6 алхам" [ref=f3e98] [cursor=pointer]:
+            - /url: /sentence/bi-chamd-khairtai
+            - generic [ref=f3e100]:
+              - generic [ref=f3e101]: Би чамд хайртай.
+              - generic [ref=f3e102]: 6 алхам
+        - listitem [ref=f3e103]:
+          - link "Өөрийгөө сайн бодоорой. 4 алхам" [ref=f3e104] [cursor=pointer]:
+            - /url: /sentence/uuriiguu-sain-bodooroi
+            - generic [ref=f3e106]:
+              - generic [ref=f3e107]: Өөрийгөө сайн бодоорой.
+              - generic [ref=f3e108]: 4 алхам
+        - listitem [ref=f3e109]:
+          - link "Үргэлж инээж яваарай. 3 алхам" [ref=f3e110] [cursor=pointer]:
+            - /url: /sentence/urgelj-ineej-yavaarai
+            - generic [ref=f3e112]:
+              - generic [ref=f3e113]: Үргэлж инээж яваарай.
+              - generic [ref=f3e114]: 3 алхам
+        - listitem [ref=f3e115]:
+          - link "Чи юу хийж байна? 5 алхам" [ref=f3e116] [cursor=pointer]:
+            - /url: /sentence/chi-yuu-khiij-baina
+            - generic [ref=f3e118]:
+              - generic [ref=f3e119]: Чи юу хийж байна?
+              - generic [ref=f3e120]: 5 алхам
+        - listitem [ref=f3e121]:
+          - link "Хоолоо идсэн үү? 3 алхам" [ref=f3e122] [cursor=pointer]:
+            - /url: /sentence/khooloo-idsen-uu
+            - generic [ref=f3e124]:
+              - generic [ref=f3e125]: Хоолоо идсэн үү?
+              - generic [ref=f3e126]: 3 алхам
+        - listitem [ref=f3e127]:
+          - link "Хэдэн настай вэ? 2 алхам" [ref=f3e128] [cursor=pointer]:
+            - /url: /sentence/kheden-nastai-ve
+            - generic [ref=f3e130]:
+              - generic [ref=f3e131]: Хэдэн настай вэ?
+              - generic [ref=f3e132]: 2 алхам
+        - listitem [ref=f3e133]:
+          - link "Чи зүгээр үү? 4 алхам" [ref=f3e134] [cursor=pointer]:
+            - /url: /sentence/chi-zugeer-uu
+            - generic [ref=f3e136]:
+              - generic [ref=f3e137]: Чи зүгээр үү?
+              - generic [ref=f3e138]: 4 алхам
+        - listitem [ref=f3e139]:
+          - link "Чи мундаг шүү. 3 алхам" [ref=f3e140] [cursor=pointer]:
+            - /url: /sentence/chi-mundag-shuu
+            - generic [ref=f3e142]:
+              - generic [ref=f3e143]: Чи мундаг шүү.
+              - generic [ref=f3e144]: 3 алхам
+        - listitem [ref=f3e145]:
+          - link "Юу байна даа? 2 алхам" [ref=f3e146] [cursor=pointer]:
+            - /url: /sentence/yuu-baina-daa
+            - generic [ref=f3e148]:
+              - generic [ref=f3e149]: Юу байна даа?
+              - generic [ref=f3e150]: 2 алхам
+        - listitem [ref=f3e151]:
+          - link "Хаашаа явж байна? 4 алхам" [ref=f3e152] [cursor=pointer]:
+            - /url: /sentence/khaashaa-yavj-baina
+            - generic [ref=f3e154]:
+              - generic [ref=f3e155]: Хаашаа явж байна?
+              - generic [ref=f3e156]: 4 алхам
+        - listitem [ref=f3e157]:
+          - link "Баяр хүргэе! 2 алхам" [ref=f3e158] [cursor=pointer]:
+            - /url: /sentence/bayar-khurgee
+            - generic [ref=f3e160]:
+              - generic [ref=f3e161]: Баяр хүргэе!
+              - generic [ref=f3e162]: 2 алхам
+        - listitem [ref=f3e163]:
+          - link "Юу хийж байгаа вэ? 3 алхам" [ref=f3e164] [cursor=pointer]:
+            - /url: /sentence/yuu-khiij-baigaa-ve
+            - generic [ref=f3e166]:
+              - generic [ref=f3e167]: Юу хийж байгаа вэ?
+              - generic [ref=f3e168]: 3 алхам
+        - listitem [ref=f3e169]:
+          - link "Чамд амжилт хүсье. 4 алхам" [ref=f3e170] [cursor=pointer]:
+            - /url: /sentence/chamd-amjilt-khuse
+            - generic [ref=f3e172]:
+              - generic [ref=f3e173]: Чамд амжилт хүсье.
+              - generic [ref=f3e174]: 4 алхам
+        - listitem [ref=f3e175]:
+          - link "Санаа зоволтгүй. 2 алхам" [ref=f3e176] [cursor=pointer]:
+            - /url: /sentence/sanaa-zovoltgui
+            - generic [ref=f3e178]:
+              - generic [ref=f3e179]: Санаа зоволтгүй.
+              - generic [ref=f3e180]: 2 алхам
+        - listitem [ref=f3e181]:
+          - link "Бүх зүйл сайхан болно. 8 алхам" [ref=f3e182] [cursor=pointer]:
+            - /url: /sentence/bukh-zuil-saikhan-bolno
+            - generic [ref=f3e184]:
+              - generic [ref=f3e185]: Бүх зүйл сайхан болно.
+              - generic [ref=f3e186]: 8 алхам
+        - listitem [ref=f3e187]:
+          - link "Би ойлголоо. 2 алхам" [ref=f3e188] [cursor=pointer]:
+            - /url: /sentence/bi-oilgoloo
+            - generic [ref=f3e190]:
+              - generic [ref=f3e191]: Би ойлголоо.
+              - generic [ref=f3e192]: 2 алхам
+        - listitem [ref=f3e193]:
+          - link "Би мэдэхгүй байна. 1 алхам" [ref=f3e194] [cursor=pointer]:
+            - /url: /sentence/bi-medekhgui-baina
+            - generic [ref=f3e196]:
+              - generic [ref=f3e197]: Би мэдэхгүй байна.
+              - generic [ref=f3e198]: 1 алхам
+        - listitem [ref=f3e199]:
+          - link "Надад туслаач. 3 алхам" [ref=f3e200] [cursor=pointer]:
+            - /url: /sentence/nadad-tuslaach
+            - generic [ref=f3e202]:
+              - generic [ref=f3e203]: Надад туслаач.
+              - generic [ref=f3e204]: 3 алхам
+        - listitem [ref=f3e205]:
+          - link "Түр хүлээгээрэй. 3 алхам" [ref=f3e206] [cursor=pointer]:
+            - /url: /sentence/tur-khuleegeerei
+            - generic [ref=f3e208]:
+              - generic [ref=f3e209]: Түр хүлээгээрэй.
+              - generic [ref=f3e210]: 3 алхам
+        - listitem [ref=f3e211]:
+          - link "Намайг уучлаарай. 3 алхам" [ref=f3e212] [cursor=pointer]:
+            - /url: /sentence/namaig-uuchlaarai
+            - generic [ref=f3e214]:
+              - generic [ref=f3e215]: Намайг уучлаарай.
+              - generic [ref=f3e216]: 3 алхам
+        - listitem [ref=f3e217]:
+          - link "Зүгээр ээ. 2 алхам" [ref=f3e218] [cursor=pointer]:
+            - /url: /sentence/zugeer-ee
+            - generic [ref=f3e220]:
+              - generic [ref=f3e221]: Зүгээр ээ.
+              - generic [ref=f3e222]: 2 алхам
+        - listitem [ref=f3e223]:
+          - link "Маш их баярлалаа. 4 алхам" [ref=f3e224] [cursor=pointer]:
+            - /url: /sentence/mash-ikh-bayarlalaa
+            - generic [ref=f3e226]:
+              - generic [ref=f3e227]: Маш их баярлалаа.
+              - generic [ref=f3e228]: 4 алхам
+        - listitem [ref=f3e229]:
+          - link "Чамд итгэж байна. 4 алхам" [ref=f3e230] [cursor=pointer]:
+            - /url: /sentence/chamd-itgej-baina
+            - generic [ref=f3e232]:
+              - generic [ref=f3e233]: Чамд итгэж байна.
+              - generic [ref=f3e234]: 4 алхам
+        - listitem [ref=f3e235]:
+          - link "Чи чадна аа. 4 алхам" [ref=f3e236] [cursor=pointer]:
+            - /url: /sentence/chi-chadna-aa
+            - generic [ref=f3e238]:
+              - generic [ref=f3e239]: Чи чадна аа.
+              - generic [ref=f3e240]: 4 алхам
+        - listitem [ref=f3e241]:
+          - link "Сайхан амраарай. 3 алхам" [ref=f3e242] [cursor=pointer]:
+            - /url: /sentence/saikhan-amraarai
+            - generic [ref=f3e244]:
+              - generic [ref=f3e245]: Сайхан амраарай.
+              - generic [ref=f3e246]: 3 алхам
+        - listitem [ref=f3e247]:
+          - link "Өлсөж байна уу? 1 алхам" [ref=f3e248] [cursor=pointer]:
+            - /url: /sentence/ulsuj-baina-uu
+            - generic [ref=f3e250]:
+              - generic [ref=f3e251]: Өлсөж байна уу?
+              - generic [ref=f3e252]: 1 алхам
+        - listitem [ref=f3e253]:
+          - link "Би чамд туслъя. 5 алхам" [ref=f3e254] [cursor=pointer]:
+            - /url: /sentence/bi-chamd-tusalya
+            - generic [ref=f3e256]:
+              - generic [ref=f3e257]: Би чамд туслъя.
+              - generic [ref=f3e258]: 5 алхам
+  - button "Open Next.js Dev Tools" [ref=f3e264] [cursor=pointer]
+  - alert [ref=f3e268]
