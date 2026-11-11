@@ -1,0 +1,21 @@
+- generic [active] [ref=f1e1]:
+  - main [ref=f1e2]:
+    - generic [ref=f1e3]:
+      - generic "Алхмууд" [ref=f1e4]
+      - generic [ref=f1e9]:
+        - generic [ref=f1e10]: 26 / 40
+        - link "Хаах" [ref=f1e11] [cursor=pointer]:
+          - /url: /learn
+          - text: ✕
+      - heading "Чамд амжилт хүсье." [level=1] [ref=f1e12]
+      - generic [ref=f1e13]:
+        - img "Баруун гарын долоовор хуруугаа урагш чиглүүлэн цээжний өмнө өргөнө." [ref=f1e14]
+        - button "Өмнөх" [ref=f1e15]
+        - button "Дараах" [ref=f1e16]
+      - paragraph [ref=f1e17]: Баруун гарын долоовор хуруугаа урагш чиглүүлэн цээжний өмнө өргөнө.
+      - paragraph [ref=f1e18]: Алхам 1 / 4
+      - generic [ref=f1e19]:
+        - button "Өмнөх өгүүлбэр" [ref=f1e20]: ← Өмнөх өгүүлбэр
+        - button "Дараах алхам" [ref=f1e21]: Дараах алхам →
+  - button "Open Next.js Dev Tools" [ref=f1e27] [cursor=pointer]
+  - alert [ref=f1e31]

@@ -1,5 +1,9 @@
 import { render, screen } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
+
+// Async server pieces are covered by their own tests.
+vi.mock("@/components/CommentsFeed", () => ({ CommentsFeed: () => null }));
+vi.mock("@/app/actions/comments", () => ({ submitComment: vi.fn() }));
 import Home from "./page";
 
 const SOURCE =
@@ -37,5 +41,29 @@ describe("landing page", () => {
       "href",
       SOURCE,
     );
+  });
+
+  it("previews six sentences and links to all of them", () => {
+    render(<Home />);
+    const cards = screen
+      .getAllByRole("link")
+      .filter((a) => a.getAttribute("href")?.startsWith("/sentence/"));
+    expect(cards).toHaveLength(6);
+    expect(screen.getByRole("link", { name: "Бүгдийг үзэх (40) →" })).toHaveAttribute(
+      "href",
+      "/learn",
+    );
+  });
+
+  it("has a comments section the header can jump to", () => {
+    const { container } = render(<Home />);
+    const section = container.querySelector("#comments");
+    expect(section).not.toBeNull();
+    expect(section).toHaveTextContent("Хүмүүс юу гэж хэлж байна");
+  });
+
+  it("shows no mnsl.mn credit", () => {
+    render(<Home />);
+    expect(screen.queryByText(/mnsl\.mn/)).not.toBeInTheDocument();
   });
 });

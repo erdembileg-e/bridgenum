@@ -97,7 +97,7 @@ function StoryPlayer({ sign, position, count, nextHref, prevHref, closeHref }: P
               key={s.image}
               data-testid="progress-bar"
               aria-current={i === index ? "step" : undefined}
-              className={`h-1 flex-1 rounded-full ${i <= index ? "bg-white" : "bg-white/25"}`}
+              className={`h-1 flex-1 rounded-full ${i <= index ? "bg-sun" : "bg-white/25"}`}
             />
           ))}
         </div>
@@ -109,11 +109,11 @@ function StoryPlayer({ sign, position, count, nextHref, prevHref, closeHref }: P
             ✕
           </Link>
         </div>
-        <h1 className="mb-3 mt-1 text-2xl font-bold">{sign.title}</h1>
+        <h1 className="mb-3 mt-1 text-2xl font-extrabold">{sign.title}</h1>
 
         <div
           data-testid="story-stage"
-          className="relative aspect-square w-full touch-pan-y select-none overflow-hidden rounded-2xl bg-white/10"
+          className="relative aspect-square w-full touch-pan-y select-none overflow-hidden rounded-3xl bg-white/10 shadow-[0_12px_40px_rgba(0,0,0,0.35)]"
           onPointerDown={onPointerDown}
           onPointerUp={onPointerUp}
         >
@@ -127,17 +127,22 @@ function StoryPlayer({ sign, position, count, nextHref, prevHref, closeHref }: P
             className="object-cover object-top"
             draggable={false}
           />
+          {/* Tap zones for touch and mouse. Keyboard users get the arrow keys and the visible
+              buttons below, so these stay out of the tab order and never draw a focus ring
+              (it showed as a line one third across the photo). */}
           <button
             type="button"
             aria-label="Өмнөх"
+            tabIndex={-1}
             onClick={() => tap(-1)}
-            className="absolute inset-y-0 left-0 w-1/3"
+            className="absolute inset-y-0 left-0 w-1/3 outline-none"
           />
           <button
             type="button"
             aria-label="Дараах"
+            tabIndex={-1}
             onClick={() => tap(1)}
-            className="absolute inset-y-0 right-0 w-2/3"
+            className="absolute inset-y-0 right-0 w-2/3 outline-none"
           />
         </div>
         {nextStep && (
@@ -147,14 +152,37 @@ function StoryPlayer({ sign, position, count, nextHref, prevHref, closeHref }: P
           </span>
         )}
 
-        <p className="mt-3 rounded-xl bg-primary-light px-4 py-3 text-center font-semibold text-ink">
+        <p className="mt-3 rounded-2xl bg-primary-light px-4 py-3 text-center font-semibold text-ink">
           {step.caption}
         </p>
+        <p className="mt-4 text-center text-sm font-semibold text-white/70">
+          Алхам {index + 1} / {steps.length}
+        </p>
+        <div className="mt-2 flex items-center gap-3">
+          <button
+            type="button"
+            onClick={() => go(-1)}
+            disabled={index === 0 && prevHref === null}
+            className="flex-1 whitespace-nowrap rounded-full bg-white/10 px-3 py-3 text-sm font-bold sm:text-base text-white transition hover:bg-white/20 disabled:opacity-30"
+          >
+            <span aria-hidden>← </span>
+            {index === 0 && prevHref ? "Өмнөх өгүүлбэр" : "Өмнөх алхам"}
+          </button>
+          <button
+            type="button"
+            onClick={() => go(1)}
+            disabled={finished}
+            className="flex-1 whitespace-nowrap rounded-full bg-sun px-3 py-3 text-sm font-bold sm:text-base text-ink shadow-[0_8px_20px_rgba(255,201,60,0.25)] transition hover:brightness-105 disabled:opacity-30"
+          >
+            {nextStep ? "Дараах алхам" : nextHref ? "Дараагийн өгүүлбэр" : "Дуусгах"}
+            <span aria-hidden> →</span>
+          </button>
+        </div>
 
         {finished && (
           <Link
             href={closeHref}
-            className="mt-4 rounded-xl bg-primary px-4 py-3 text-center font-bold text-white"
+            className="mt-4 rounded-full bg-accent px-4 py-3 text-center font-bold text-white"
           >
             Бүх дохиог үзэх
           </Link>

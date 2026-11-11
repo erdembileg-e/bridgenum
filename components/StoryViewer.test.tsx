@@ -139,4 +139,34 @@ describe("StoryViewer", () => {
     renderViewer();
     expect(screen.getByRole("link", { name: "Хаах" })).toHaveAttribute("href", "/learn");
   });
+
+  it("has visible buttons to move between steps with a step counter", () => {
+    renderViewer();
+    expect(screen.getByText("Алхам 1 / 3")).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: "Дараах алхам" }));
+    expect(screen.getByText("Алхам хоёр", { selector: "p" })).toBeInTheDocument();
+    expect(screen.getByText("Алхам 2 / 3")).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: "Өмнөх алхам" }));
+    expect(screen.getByText("Алхам нэг", { selector: "p" })).toBeInTheDocument();
+  });
+
+  it("turns the buttons into sentence links at the ends", () => {
+    renderViewer();
+    fireEvent.click(screen.getByRole("button", { name: "Өмнөх өгүүлбэр" }));
+    expect(push).toHaveBeenCalledWith("/sentence/prev");
+    right();
+    right();
+    fireEvent.click(screen.getByRole("button", { name: "Дараагийн өгүүлбэр" }));
+    expect(push).toHaveBeenCalledWith("/sentence/next");
+  });
+
+  it("disables the back button on the very first step", () => {
+    renderViewer({ prevHref: null });
+    expect(screen.getByRole("button", { name: "Өмнөх алхам" })).toBeDisabled();
+  });
+
+  it("shows no source credit line", () => {
+    renderViewer();
+    expect(screen.queryByText(/mnsl\.mn/)).not.toBeInTheDocument();
+  });
 });

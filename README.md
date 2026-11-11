@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Монгол дохионы хэл
 
-## Getting Started
+Монгол дохионы хэлний өгүүлбэр, үсгийг зургаар таниулах сайт (Next.js, Vercel).
 
-First, run the development server:
+## Ажиллуулах
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm test         # тестүүд
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Шинэ дохио нэмэх заавар: [docs/adding-signs.md](docs/adding-signs.md).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Сэтгэгдэл (Supabase)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Зочид нүүр хуудсанд сэтгэгдэл үлдээнэ. Таныг `/admin` дээр зөвшөөрсний дараа л сайтад харагдана.
+Тохируулаагүй бол сайт хэвийн ажиллаж, сэтгэгдлийн хэсэг «хаалттай» гэж харагдана.
 
-## Learn More
+1. [supabase.com](https://supabase.com) дээр шинэ төсөл үүсгэнэ.
+2. **SQL Editor** нээгээд [supabase/migrations/0001_comments.sql](supabase/migrations/0001_comments.sql)-ийн
+   агуулгыг хуулж ажиллуулна.
+3. **Project Settings → API Keys → Secret keys** хэсгээс `sb_secret_…` түлхүүрийг хуулна. Project URL нь `https://<project-id>.supabase.co`.
+   Энэ нууц түлхүүрийг хэнд ч битгий өгөөрэй.
+4. Vercel → төсөл → **Settings → Environment Variables** дээр дараах 4-ийг нэмнэ
+   ([.env.example](.env.example)-г үзнэ үү):
+   - `SUPABASE_URL` — Project URL
+   - `SUPABASE_SERVICE_ROLE_KEY` — `sb_secret_…` нууц түлхүүр
+   - `ADMIN_PASSWORD` — `/admin`-д нэвтрэх нууц үг, **дор хаяж 12 тэмдэгт** (урт, санамсаргүй байх тусам сайн)
+   - `COMMENTS_SECRET` — 32+ санамсаргүй тэмдэгт (`openssl rand -hex 32`)
+5. Дахин deploy хийнэ.
+6. `сайт/admin` руу орж нууц үгээ оруулаад сэтгэгдлийг **Зөвшөөрөх**, **Нуух** эсвэл **Устгах**.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Компьютер дээрээ туршихдаа `.env.example`-г `.env.local` болгон хуулж утгуудыг бөглөнө.

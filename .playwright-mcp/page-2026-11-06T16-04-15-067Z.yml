@@ -1,0 +1,85 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link "🤟 Дохионы хэл" [ref=e3] [cursor=pointer]:
+      - /url: /
+    - navigation "Үндсэн цэс" [ref=e4]:
+      - list [ref=e5]:
+        - listitem [ref=e6]:
+          - link "Өгүүлбэр" [ref=e7] [cursor=pointer]:
+            - /url: /learn
+        - listitem [ref=e8]:
+          - link "Цагаан толгой" [ref=e9] [cursor=pointer]:
+            - /url: /learn#letters
+        - listitem [ref=e10]:
+          - link "Сэтгэгдэл" [ref=e11] [cursor=pointer]:
+            - /url: /#comments
+  - main [ref=e12]:
+    - generic [ref=e13]:
+      - heading [level=1] [ref=e14]:
+        - text: Дохионы хэл бол
+        - mark [ref=e15]: бас нэг хэл.
+      - paragraph [ref=e16]: Монголд 7,800 орчим сонсголгүй хүн бий. Тэд гараар ярьдаг, нүдээрээ сонсдог. Харин бидний ихэнх нь тэдэнтэй ярилцаж чаддаггүй.
+    - generic [ref=e22]:
+      - heading "Нэг үг сураад үзье." [level=2] [ref=e23]
+      - paragraph [ref=e24]: Сайн байна уу?
+      - list [ref=e25]:
+        - listitem [ref=e26]:
+          - img "Баруун гарын алгаа нүүрнийхээ өмнө, нүдний түвшинд байрлуулна." [ref=e28]
+          - paragraph [ref=e29]: Баруун гарын алгаа нүүрнийхээ өмнө, нүдний түвшинд байрлуулна.
+        - listitem [ref=e30]:
+          - img "Гараа доош буулгаж, алгаа цээжин дээрээ тавина." [ref=e32]
+          - paragraph [ref=e33]: Гараа доош буулгаж, алгаа цээжин дээрээ тавина.
+        - listitem [ref=e34]:
+          - img "Алгаа дээш харуулан, гараа урагш хүн рүү сунгана." [ref=e36]
+          - paragraph [ref=e37]: Алгаа дээш харуулан, гараа урагш хүн рүү сунгана.
+      - paragraph [ref=e38]: Та одоо нэг дохио мэддэг боллоо. 🙌
+      - link "Цааш үзэх →" [ref=e39] [cursor=pointer]:
+        - /url: /learn
+    - generic [ref=e40]:
+      - generic [ref=e41]:
+        - heading "40 өгүүлбэр" [level=2] [ref=e42]
+        - link "Бүгдийг үзэх (40) →" [ref=e43] [cursor=pointer]:
+          - /url: /learn
+      - list [ref=e44]:
+        - listitem [ref=e45]:
+          - link "Сайн байна уу? 3 алхам" [ref=e46] [cursor=pointer]:
+            - /url: /sentence/sain-baina-uu
+            - generic [ref=e48]:
+              - generic [ref=e49]: Сайн байна уу?
+              - generic [ref=e50]: 3 алхам
+        - listitem [ref=e51]:
+          - link "Сайхан амарсан уу? 3 алхам" [ref=e52] [cursor=pointer]:
+            - /url: /sentence/saikhan-amarsan-uu
+            - generic [ref=e54]:
+              - generic [ref=e55]: Сайхан амарсан уу?
+              - generic [ref=e56]: 3 алхам
+        - listitem [ref=e57]:
+          - link "Өдрийг сайхан өнгөрүүлээрэй. 7 алхам" [ref=e58] [cursor=pointer]:
+            - /url: /sentence/udriig-saikhan-unguruuleerei
+            - generic [ref=e60]:
+              - generic [ref=e61]: Өдрийг сайхан өнгөрүүлээрэй.
+              - generic [ref=e62]: 7 алхам
+        - listitem [ref=e63]:
+          - link "Өглөөний мэнд. 4 алхам" [ref=e64] [cursor=pointer]:
+            - /url: /sentence/ugluunii-mend
+            - generic [ref=e66]:
+              - generic [ref=e67]: Өглөөний мэнд.
+              - generic [ref=e68]: 4 алхам
+        - listitem [ref=e69]:
+          - link "Өдрийн мэнд. 3 алхам" [ref=e70] [cursor=pointer]:
+            - /url: /sentence/udriin-mend
+            - generic [ref=e72]:
+              - generic [ref=e73]: Өдрийн мэнд.
+              - generic [ref=e74]: 3 алхам
+        - listitem [ref=e75]:
+          - link "Оройн мэнд. 4 алхам" [ref=e76] [cursor=pointer]:
+            - /url: /sentence/oroin-mend
+            - generic [ref=e78]:
+              - generic [ref=e79]: Оройн мэнд.
+              - generic [ref=e80]: 4 алхам
+    - heading "💬 Хүмүүс юу гэж хэлж байна" [level=2] [ref=e82]
+    - 'link "Эх сурвалж: SDGBE төсөл, 2023" [ref=e83] [cursor=pointer]':
+      - /url: https://www.sdgbeproject.mn/en/posts/today-is-the-international-day-of-sign-languages-according-to-2023-statistics-there-are-111228-people-with-disabilities-in-mongolia-including-7800-who-are-deaf
+  - contentinfo [ref=e84]:
+    - 'link "Зургийн эх сурвалж: mnsl.mn" [ref=e85] [cursor=pointer]':
+      - /url: https://mnsl.mn

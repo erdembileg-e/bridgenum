@@ -1,0 +1,5 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - heading "Сэтгэгдэл удирдах" [level=1] [ref=e3]
+    - paragraph [ref=e4]: Ачаалж байна…
+  - alert [ref=e5]

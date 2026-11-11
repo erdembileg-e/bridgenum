@@ -2,14 +2,35 @@
 
 @theme inline {
   --color-primary: #5b3a9e;
-  --color-primary-light: #e9def7;
-  --color-page: #faf8fd;
+  --color-primary-light: #f1e9ff;
+  --color-accent: #7b4fd6;
+  --color-sun: #ffc93c;
+  --color-page: #f6f1ff;
   --color-story: #1d1530;
   --color-ink: #2a1f3d;
-  --font-sans: var(--font-nunito);
+  --font-sans: var(--font-gip), var(--font-nunito), system-ui, sans-serif;
 }
 
+@utility bg-warm {
+  background: linear-gradient(180deg, #efe5ff 0, #f6f1ff 40%, #fffaf0 100%);
+}
+
+/* One gradient down the top of the page, fading into cream; it must not tile per screen. */
 body {
-  background: var(--color-page);
+  min-height: 100dvh;
+  background: linear-gradient(180deg, #efe5ff 0, #f6f1ff 28rem, #fffaf0 70rem) no-repeat;
+  background-color: #fffaf0;
   color: var(--color-ink);
+}
+
+/* Tailwind 4 gives buttons the default arrow cursor; everything clickable should show a hand. */
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [role="tab"],
+  summary,
+  label[for],
+  select {
+    cursor: pointer;
+  }
 }
