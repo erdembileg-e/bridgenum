@@ -237,7 +237,7 @@ export const sentences: Sign[] = [
       },
       {
         image: "/signs/chamaar-bakharkhaj-baina/step-2.jpg",
-        caption: "Долоовор хуруугаараа урд байгаа хүн рүү заана.",
+        caption: "Баруун гараа атгаж, эрхий хуруугаа дээш гарган зүүн цээжин дээрээ тавина.",
       },
     ],
     ogImage: "/signs/chamaar-bakharkhaj-baina/steps.jpg",
@@ -250,7 +250,7 @@ export const sentences: Sign[] = [
     steps: [
       {
         image: "/signs/daraa-uulzya/step-1.jpg",
-        caption: "Баруун гарын алгаа доош харуулан бэлхүүсний хажууд барьж, урагш түлхэх мэт хөдөлгөнө.",
+        caption: "Баруун гарын алгаа доош харуулан бэлхүүсний хажууд барьж, урагш хойш хөдөлгөнө.",
       },
       {
         image: "/signs/daraa-uulzya/step-2.jpg",
@@ -346,10 +346,14 @@ export const sentences: Sign[] = [
       },
       {
         image: "/signs/urgelj-ineej-yavaarai/step-2.jpg",
-        caption: "Баруун гараа алгаа урагш харуулан толгойн түвшинд өргөнө.",
+        caption: "Баруун гарын хуруугаа эрүүндээ хүргэж, инээмсэглэнэ.",
       },
       {
         image: "/signs/urgelj-ineej-yavaarai/step-3.jpg",
+        caption: "Баруун гараа алгаа урагш харуулан толгойн түвшинд өргөнө.",
+      },
+      {
+        image: "/signs/urgelj-ineej-yavaarai/step-4.jpg",
         caption: "Алгаа доош харуулан гараа урагш хазайлгана.",
       },
     ],
@@ -363,22 +367,18 @@ export const sentences: Sign[] = [
     steps: [
       {
         image: "/signs/chi-yuu-khiij-baina/step-1.jpg",
-        caption: "Баруун гарын долоовор хуруугаа урагш чиглүүлэн цээжний өмнө өргөнө.",
-      },
-      {
-        image: "/signs/chi-yuu-khiij-baina/step-2.jpg",
         caption: "Долоовор хуруугаараа урд байгаа хүн рүү заана.",
       },
       {
-        image: "/signs/chi-yuu-khiij-baina/step-3.jpg",
+        image: "/signs/chi-yuu-khiij-baina/step-2.jpg",
         caption: "Баруун гарын долоовор хуруугаа дээш чиглүүлэн цээжний өмнө барьж, хажуу тийш сэгсэрнэ.",
       },
       {
-        image: "/signs/chi-yuu-khiij-baina/step-4.jpg",
+        image: "/signs/chi-yuu-khiij-baina/step-3.jpg",
         caption: "Хоёр гараа нударга болгон цээжний өмнө ойртуулан барина.",
       },
       {
-        image: "/signs/chi-yuu-khiij-baina/step-5.jpg",
+        image: "/signs/chi-yuu-khiij-baina/step-4.jpg",
         caption: "Нударгануудаа хооронд нь хүргэж, ажил хийх мэт ээлжлэн эргүүлнэ.",
       },
     ],
@@ -392,14 +392,6 @@ export const sentences: Sign[] = [
     steps: [
       {
         image: "/signs/khooloo-idsen-uu/step-1.jpg",
-        caption: "Баруун гарын долоовор хуруугаа босоо барьж, уруулынхаа өмнө авчирна.",
-      },
-      {
-        image: "/signs/khooloo-idsen-uu/step-2.jpg",
-        caption: "Хуруугаа уруул дээрээ хүргэнэ.",
-      },
-      {
-        image: "/signs/khooloo-idsen-uu/step-3.jpg",
         caption: "Баруун гарын хурууны үзүүрүүдийг нийлүүлж, ам руугаа хэд хэдэн удаа ойртуулна.",
       },
     ],
@@ -430,18 +422,14 @@ export const sentences: Sign[] = [
     steps: [
       {
         image: "/signs/chi-zugeer-uu/step-1.jpg",
-        caption: "Баруун гарын долоовор хуруугаа урагш чиглүүлэн цээжний өмнө өргөнө.",
-      },
-      {
-        image: "/signs/chi-zugeer-uu/step-2.jpg",
         caption: "Долоовор хуруугаараа урд байгаа хүн рүү заана.",
       },
       {
-        image: "/signs/chi-zugeer-uu/step-3.jpg",
+        image: "/signs/chi-zugeer-uu/step-2.jpg",
         caption: "Баруун гарын алгаа доош харуулан цээжний өмнө барина.",
       },
       {
-        image: "/signs/chi-zugeer-uu/step-4.jpg",
+        image: "/signs/chi-zugeer-uu/step-3.jpg",
         caption: "Гараа доош буулгаж, хуруугаа сул унжуулна.",
       },
     ],
@@ -455,14 +443,10 @@ export const sentences: Sign[] = [
     steps: [
       {
         image: "/signs/chi-mundag-shuu/step-1.jpg",
-        caption: "Баруун гарын долоовор хуруугаа урагш чиглүүлэн цээжний өмнө өргөнө.",
-      },
-      {
-        image: "/signs/chi-mundag-shuu/step-2.jpg",
         caption: "Долоовор хуруугаараа урд байгаа хүн рүү заана.",
       },
       {
-        image: "/signs/chi-mundag-shuu/step-3.jpg",
+        image: "/signs/chi-mundag-shuu/step-2.jpg",
         caption: "Баруун гарын эрхий хуруугаа дээш гозойлгон мөрний түвшинд өргөнө.",
       },
     ],
@@ -556,18 +540,14 @@ export const sentences: Sign[] = [
     steps: [
       {
         image: "/signs/chamd-amjilt-khuse/step-1.jpg",
-        caption: "Баруун гарын долоовор хуруугаа урагш чиглүүлэн цээжний өмнө өргөнө.",
-      },
-      {
-        image: "/signs/chamd-amjilt-khuse/step-2.jpg",
         caption: "Долоовор хуруугаараа урд байгаа хүн рүү заана.",
       },
       {
-        image: "/signs/chamd-amjilt-khuse/step-3.jpg",
+        image: "/signs/chamd-amjilt-khuse/step-2.jpg",
         caption: "Хоёр гарын эрхий хуруугаа дээш гозойлгож, бэлхүүсний өмнө зэрэгцүүлэн барина.",
       },
       {
-        image: "/signs/chamd-amjilt-khuse/step-4.jpg",
+        image: "/signs/chamd-amjilt-khuse/step-3.jpg",
         caption: "Баруун гараа мөрний түвшинд дээш өргөж, зүүн гараа байранд нь үлдээнэ.",
       },
     ],
@@ -643,7 +623,7 @@ export const sentences: Sign[] = [
       },
       {
         image: "/signs/bi-oilgoloo/step-2.jpg",
-        caption: "Баруун гарын эрхий, долоовор хуруугаа дугуйлан (OK хэлбэр) нүүрнийхээ хажууд өргөнө.",
+        caption: "Баруун гарын долоовор хуруугаа духныхаа хажууд хүргэнэ.",
       },
     ],
     ogImage: "/signs/bi-oilgoloo/steps.jpg",
@@ -657,6 +637,14 @@ export const sentences: Sign[] = [
       {
         image: "/signs/bi-medekhgui-baina/step-1.jpg",
         caption: "Баруун гарын хуруугаа цээжиндээ хүргээд, гараа доош буулган хажуу тийш шилжүүлнэ.",
+      },
+      {
+        image: "/signs/bi-medekhgui-baina/step-2.jpg",
+        caption: "Баруун гарын долоовор хуруугаа духныхаа хажууд хүргэнэ.",
+      },
+      {
+        image: "/signs/bi-medekhgui-baina/step-3.jpg",
+        caption: "Гараа духнаасаа хажуу тийш гаргаж, алгаа дээш харуулан дэлгэнэ.",
       },
     ],
     ogImage: "/signs/bi-medekhgui-baina/steps.jpg",
@@ -774,18 +762,14 @@ export const sentences: Sign[] = [
     steps: [
       {
         image: "/signs/chamd-itgej-baina/step-1.jpg",
-        caption: "Баруун гарын долоовор хуруугаа урагш чиглүүлэн цээжний өмнө өргөнө.",
-      },
-      {
-        image: "/signs/chamd-itgej-baina/step-2.jpg",
         caption: "Долоовор хуруугаараа урд байгаа хүн рүү заана.",
       },
       {
-        image: "/signs/chamd-itgej-baina/step-3.jpg",
+        image: "/signs/chamd-itgej-baina/step-2.jpg",
         caption: "Баруун гарын алгаа цээжин дээрээ тавина.",
       },
       {
-        image: "/signs/chamd-itgej-baina/step-4.jpg",
+        image: "/signs/chamd-itgej-baina/step-3.jpg",
         caption: "Алгаа цээжиндээ зөөлөн дарна.",
       },
     ],
@@ -799,18 +783,14 @@ export const sentences: Sign[] = [
     steps: [
       {
         image: "/signs/chi-chadna-aa/step-1.jpg",
-        caption: "Баруун гарын долоовор хуруугаа урагш чиглүүлэн цээжний өмнө өргөнө.",
-      },
-      {
-        image: "/signs/chi-chadna-aa/step-2.jpg",
         caption: "Долоовор хуруугаараа урд байгаа хүн рүү заана.",
       },
       {
-        image: "/signs/chi-chadna-aa/step-3.jpg",
+        image: "/signs/chi-chadna-aa/step-2.jpg",
         caption: "Баруун гараа нударга болгон толгойн хажууд өргөнө.",
       },
       {
-        image: "/signs/chi-chadna-aa/step-4.jpg",
+        image: "/signs/chi-chadna-aa/step-3.jpg",
         caption: "Нударгаа урагш хүчтэй бөхийлгөнө.",
       },
     ],
