@@ -127,17 +127,22 @@ function StoryPlayer({ sign, position, count, nextHref, prevHref, closeHref }: P
             className="object-cover object-top"
             draggable={false}
           />
+          {/* Tap zones for touch and mouse. Keyboard users get the arrow keys and the visible
+              buttons below, so these stay out of the tab order and never draw a focus ring
+              (it showed as a line one third across the photo). */}
           <button
             type="button"
             aria-label="Өмнөх"
+            tabIndex={-1}
             onClick={() => tap(-1)}
-            className="absolute inset-y-0 left-0 w-1/3"
+            className="absolute inset-y-0 left-0 w-1/3 outline-none"
           />
           <button
             type="button"
             aria-label="Дараах"
+            tabIndex={-1}
             onClick={() => tap(1)}
-            className="absolute inset-y-0 right-0 w-2/3"
+            className="absolute inset-y-0 right-0 w-2/3 outline-none"
           />
         </div>
         {nextStep && (
